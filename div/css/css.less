@@ -1,0 +1,278 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {
+    background: #eee;
+    font-family: 'Montserrat', open sans, sans-serif;
+    .menu {
+        background: #fff;
+        .close {
+            position: absolute;
+            right: 0;
+            padding: 1em;
+            display: none;
+        }
+        .logo {
+            i {
+                display: inline-block;
+                padding: 1em;
+                cursor: pointer;
+                display: none;
+            }
+            h1 {
+                display: inline-block;
+            }
+        }
+        .menu {
+            float: right;
+            ul {
+                margin: 0px;
+                padding: 0px;
+                display: inline-block;
+                li {
+                    list-style-type: none;
+                    float: left;
+                    padding: 0.5em;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    margin: 2em 1em;
+                    cursor: pointer;
+                    transition: 200ms;
+                    border-bottom: 3px solid #fff;
+                }
+                :hover {
+                    border-bottom: 3px solid #111;
+                    // border-radius: 30px;
+                }
+            }
+            :after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .selected {
+                border-bottom: 3px solid #111;
+                // border-radius: 30px;
+            }
+            .user {
+                display: inline-block;
+                float: right;
+                position: relative;
+                .avatar {
+                    display: inline-block;
+                    position: relative;
+                    img {
+                        width: 50px;
+                        border-radius: 50%;
+                        margin: 1em auto;
+                        display: inline-block;
+                    }
+                    .icon {
+                        top: 15px;
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        background: red;
+                        text-align: center;
+                        line-height: 20px;
+                        border-radius: 50%;
+                        color: #fff;
+                        right: -8px;
+                        box-shadow: 0px 0px 1px 1px #E2E2E2;
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 750px) {
+            .logo {
+                i {
+                    display: inline-block;
+                }
+            }
+            .menu {
+                background: rgba(251, 251, 251, 0.86);
+                position: fixed;
+                z-index: 2000;
+                left: -100%;
+                height: 100%;
+                top: 0;
+                width: 100%;
+                transition: 300ms;
+                ul {
+                    display: block;
+                    margin: 25% auto;
+                    width: 70%;
+                    li {
+                        width: 100%;
+                        padding: 1em;
+                        margin: 0;
+                        text-align: center;
+                        border-bottom: none;
+                    }
+                    :hover {
+                        border-bottom: none;
+                    }
+                    .selected {
+                        border-bottom: none;
+                    }
+                }
+                .user {
+                    display: none;
+                    // float: none;
+                    // display: block;
+                    // .avatar {
+                    //     padding: 1em;
+                    //     width: 100%;
+                    //     img {
+                    //         width: 50px;
+                    //         border-radius: 50%;
+                    //         margin: 1em auto;
+                    //         display: block;
+                    //     }
+                    // }
+                    // .icon {}
+                }
+                .close {
+                    display: block;
+                }
+            }
+        }
+    }
+    .slider {
+        background: url(../../img/slider.jpg) 100%;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 500px;
+        position: relative;
+        .slider_shader {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: inherit;
+            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.65));
+            .main_sub {
+                background: rgba(255, 255, 255, 0.49);
+                padding: 2em;
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+                h1 {
+                    font-size: 4em;
+                    // text-shadow: 1px 1px 1px #BABABA;
+                }
+                p {
+                    // text-shadow: 1px 1px 1px #BABABA;
+                }
+                .ratings {
+                    ul {
+                        padding: 0px;
+                        margin: 0px;
+                        li {
+                            list-style: none;
+                            padding: .3em;
+                            float: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .movie_list {
+            background: #eee;
+        .menu_selector {
+            z-index: 1000;
+            padding: 0 1em;
+            border-bottom: 1px solid #eee;
+            background: rgba(255, 255, 255, 0.49);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            margin-top: -4em;
+            position: relative;
+            ul {
+                padding: 0px;
+                margin: 0px;
+                li {
+                    float: left;
+                    list-style-type: none;
+                    height: 4em;
+                    padding: 0 1em;
+                    line-height: 4em;
+                    text-transform: uppercase;
+                    border-bottom: 4px solid transparent;
+                    cursor: pointer;
+                }
+                :hover,
+                .selected {
+                    border-bottom: 4px solid #A2ADC1;
+                }
+            }
+            :after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+        .selector {
+            padding: 1em 0;
+            background: #fff;
+            .sorting {
+                .hori {
+                    display: inline-block;
+                    padding: 0.5em;
+                }
+                .grid {
+                    display: inline-block;
+                    padding: 0.5em 0;
+                }
+            }
+            .rating-scroller {}
+            .search_block {
+                float: right;
+                input {
+                    border: none;
+                    border-bottom: 1px solid #DFDFFF;
+                    display: inline-block;
+                }
+                i {
+                    display: inline-block;
+                }
+            }
+        }
+        :after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .movielist_row {
+            .movielist {
+                padding-top: 1em;
+                .marginPoster {
+                        border: 1px solid #DCDCDC;
+                        margin: 1em auto;
+                        background: #fff;
+                        box-shadow: 0px 0px 14px -11px #111111 !important;
+                    .poster {
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+                .poster_details {
+                    padding: 1em;
+                    font-size: 14px;
+                    .name {
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                    .genre {
+                        color: #344961;
+                    }
+                    .ratings {
+                        font-size: 16px;
+                        font-weight: 600;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
